@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
         crafts.forEach((craft) => {
             const craftCard = document.createElement('div');
-            craftCard.classList.add('craft-card', 'w3-card', 'w3-margin', 'w3-center');
+            craftCard.classList.add('gallery-item', 'w3-card', 'w3-responsive');
             galleryContainer.appendChild(craftCard);
 
             const craftLink = document.createElement('a');
@@ -23,7 +23,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
             const craftImage = document.createElement('img');
             craftImage.src = `/crafts/${craft.image}`;
-            craftImage.classList.add('w3-image');
             craftImage.onclick = () => {
                 console.log('Craft clicked:', craft);
                 displayCraftDetails(craft);
@@ -46,7 +45,10 @@ document.addEventListener("DOMContentLoaded", function() {
             const img = document.createElement("img");
             img.src = `/crafts/${craft.image}`;
             img.alt = craft.name;
-            img.style.maxWidth = "100%";
+            img.style.maxWidth = "350px";
+            img.style.maxHeight = "300px";
+            img.style.width = "auto";
+            img.style.height = "auto";
             dialogDetails.appendChild(img);
     
             const p = document.createElement("p");
