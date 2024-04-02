@@ -9,22 +9,22 @@ document.addEventListener("DOMContentLoaded", function() {
 
     const showCrafts = async () => {
         const crafts = await getCrafts();
-        const galleryContainer = document.getElementById('galleryContainer');
+        const galleryContainer = document.getElementById("galleryContainer");
         galleryContainer.innerHTML = "";
 
         crafts.forEach((craft) => {
-            const craftCard = document.createElement('div');
-            craftCard.classList.add('gallery-item', 'w3-card', 'w3-responsive');
+            const craftCard = document.createElement("section");
+            craftCard.classList.add("gallery-item", "w3-responsive");
             galleryContainer.appendChild(craftCard);
 
-            const craftLink = document.createElement('a');
+            const craftLink = document.createElement("a");
             craftLink.href = "#";
             craftCard.appendChild(craftLink);
 
-            const craftImage = document.createElement('img');
+            const craftImage = document.createElement("img");
             craftImage.src = `/crafts/${craft.image}`;
             craftImage.onclick = () => {
-                console.log('Craft clicked:', craft);
+                console.log("Craft clicked:", craft);
                 displayCraftDetails(craft);
             };
             craftLink.appendChild(craftImage);
